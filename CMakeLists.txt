@@ -6,10 +6,12 @@ enable_testing()
 
 file(GLOB_RECURSE app_files "app/**" "source/**" "include/**")
 add_executable(sosimians ${app_files})
+set_property(TARGET sosimians PROPERTY CXX_STANDARD 17)
 target_include_directories(sosimians PRIVATE "include")
 
 file(GLOB_RECURSE test_files "test/**" "source/**" "include/**")
 add_executable(sosimians_test ${test_files})
+set_property(TARGET sosimians_test PROPERTY CXX_STANDARD 17)
 target_include_directories(sosimians_test PRIVATE "include")
 add_test(NAME sosimians_test COMMAND sosimians_test)
 
